@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusConnect</title>
+</head>
+<body>
+<h1>CampusConnect</h1>
+
+<h2>Report a Campus Problem</h2>
+
+<p>
+    Help improve your campus by reporting problems you notice.
+</p>
+
+<form id="problemForm">
+
+    <label for="title">Problem Title:</label>
+    <br>
+    <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Example: Broken classroom fan"
+        required
+    >
+
+    <br><br>
+
+    <label for="category">Category:</label>
+    <br>
+
+    <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <option value="Electricity">Electricity</option>
+        <option value="Cleanliness">Cleanliness</option>
+        <option value="Water">Water</option>
+        <option value="Internet">Internet</option>
+        <option value="Infrastructure">Infrastructure</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <br><br>
+
+    <label for="description">Description:</label>
+    <br>
+
+    <textarea
+        id="description"
+        name="description"
+        rows="5"
+        cols="40"
+        placeholder="Describe the problem..."
+        required
+    ></textarea>
+
+    <br><br>
+
+    <label for="location">Location:</label>
+    <br>
+
+    <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Example: Block A, Room 204"
+        required
+    >
+
+    <br><br>
+
+    <button type="submit">Submit Report</button>
+
+</form>
+
+<p id="message"></p>
+
+<script>
+
+    const form = document.getElementById("problemForm");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const title = document.getElementById("title").value;
+        const category = document.getElementById("category").value;
+        const description = document.getElementById("description").value;
+        const location = document.getElementById("location").value;
+
+        console.log("Problem Title:", title);
+        console.log("Category:", category);
+        console.log("Description:", description);
+        console.log("Location:", location);
+
+        document.getElementById("message").textContent =
+            "Report submitted successfully!";
+
+    });
+
+</script>
+
+</body>
+
+</html>
